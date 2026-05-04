@@ -9,550 +9,305 @@
     <meta name="author" content="Johannes von Oswald">
     <meta name="description" content="Johannes von Oswald is a researcher in the field of deep learning.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 
     <!-- STYLING -->
-    <link href='https://fonts.googleapis.com/css?family=DM+Sans' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
+    
     <style type="text/css">
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400,500,600display=swap');
-
-        .main-header {
-            color: rgb(130, 8, 8);
+        :root {
+            --primary-red: rgb(130, 8, 8);
+            --bg-color: #fcfcfc;
+            --card-bg: #ffffff;
+            --text-main: #2c2c2c;
+            --text-muted: #4a4a4a;
+            --border-color: rgba(0,0,0,0.1);
         }
 
-        @-ms-viewport {
-            width: device-width;
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #121212;
+                --card-bg: #1e1e1e;
+                --text-main: #e0e0e0;
+                --text-muted: #b0b0b0;
+                --border-color: rgba(255,255,255,0.1);
+                --primary-red: #ff8a80;
+            }
+            body { background: var(--bg-color) !important; }
+            .academic-link-box { background: #2a2a2a !important; border-color: #444 !important; }
+            .academic-link-box a { color: #eee !important; }
         }
 
-        html,
+        html { scroll-behavior: smooth; }
+
         body {
-            margin: 0px;
-            padding: 0px;
-            width: 90%;
-            margin: auto;
-            font-size: 14.5px;
-            background: #e4e4e429;
-        }
-
-        body {
-            height: 100%;
-            width: 100%;
+            margin: 0;
+            padding: 0;
             font-family: 'DM Sans', sans-serif;
-        }
-
-        ul {
-            list-style-type: disc;
-            padding: 0px
-        }
-
-        li {
-            margin-bottom: 15px;
-            background: white;
-            padding: 5px;
-            border-radius: 0px;
-            /*box-shadow: 0.3em 0.2em 1em rgb(106 63 40 / 44%);*/
-            border: 1.3px solid rgb(106, 106, 106);
-            margin-bottom: 30px;
-        }
-
-        li>.noborder {
-            border: 0px;
-        }
-
-        li>.flex-container>.flex-item-left>b {
-            font-size: 14px;
-            color: rgb(23, 23, 23);
-        }
-
-        li>.flex-container>.flex-item-left>span {
-            color: rgb(28, 28, 28);
-        }
-
-        li:last-child {
-            margin-bottom: 0px;
-        }
-
-        a {
-            color: black;
-            text-decoration: none;
-        }
-
-        .full {
-            height: 100%;
-            width: 100%;
-            background-color: rgba(210, 210, 210, 0.103);
-            position: relative;
-            margin: auto;
+            background: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
         }
 
         .box-main {
             width: 95%;
             max-width: 900px;
             margin: auto;
-            border-radius: 0px;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
+            padding-bottom: 50px;
         }
 
-        .box-left {
-            width: auto;
-            text-align: left;
-            margin-top: 2px;
-            padding: 10px;
-        }
-
-        .box-right {
-            text-align: left;
-            margin-top: 0px;
-            padding: 0px;
-            width: 100%;
-            display: flex;
-            justify-content: left;
-        }
-
+        /* Sticky Navigation */
         .box-top {
-            text-align: left;
-            margin-top: 20px;
-            padding: 0px;
-            width: 100%;
-            display: flex;
-            justify-content: right;
-            font-size: 17px;
-        }
-
-        .portrait {
-            border-radius: 0px;
-            max-height: 260px;
-            min-height: 130px;
-            margin-top: 20px;
-            box-shadow: 0.5em 0.5em 1em #8a8a8aa3;
-            margin-left: 10px;
-        }
-
-        .linear-grad-3 {
-            background-image: linear-gradient(to bottom right, rgb(194 194 194), rgb(248 248 249), #a9a9a9);
-        }
-
-        .highlight {
-            border-radius: 0px;
-            color: black;
-        }
-
-        .highlight-company {
-            border-radius: 0px;
-            font-weight: 600;
-            color: rgb(130, 8, 8);
-        }
-
-        .academic-link-box {
-            color: rgb(49, 35, 35);
-            margin-bottom: 0px;
-            float: left;
-            margin: 10px 0px 0px 8px;
-            padding: 6px 10px 6px 10px;
-            background: white;
-            border-radius: 0px;
-            border: 1.5px solid rgb(49, 35, 35);
-            /*
-            box-shadow: 0.05em 0.05em 0.4em rgb(0 0 0 / 20%);
-            */
-        }
-
-        .academic-link-box>a {
-            color: rgb(49, 35, 35);
-        }
-
-        .academic-link-box:hover {
-            background: rgba(199, 199, 199, 0.56);
-        }
-
-        .research {
-            margin-top: 30px;
-            text-align: left;
-            justify-content: center;
-        }
-
-        .research-br {
-            display: block;
-            content: "";
-            margin: 12px 0;
-        }
-
-        .research-item-img {
-            width: 220px;
-            max-width: 95%;
-            max-height: 170px;
-            margin: auto;
-            display: block;
-        }
-
-        .b-personal {
-            color: black !important;
-            font-weight: 600;
-            text-decoration: underline;
-        }
-
-        .b-color {
-            color: rgb(143, 64, 11);
-        }
-
-        .li-talks {
-            padding: 10px;
-        }
-
-        .box-interest {
-            padding: 0px 5px;
-            margin: 4px 10px;
-            border-radius: 0px;
-            border-left: 0px solid rgb(2 34 122 / 82%);
-            /*
-            background: white;
-            box-shadow: 0.05em 0.05em 0.4em rgb(0 0 0 / 20%);
-            */
-        }
-
-        .a-paper {
-            color: rgb(49, 35, 35);
-            padding: 2px 5px;
-            margin: 5px 3px 0px 0px;
-            border: 1px solid rgb(49, 35, 35);
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .a-paper:hover {
-            background: rgb(223 182 139 / 56%);
-        }
-
-        .paper-title {
-            color: rgb(130, 8, 8);
-            font-size: 15px;
-        }
-
-        .box-topic {
-            margin-top: 25px;
-        }
-
-        .box-item-topic {
-            padding: 3px 7px;
-            margin: 5px 5px 0px 0px;
-            background: #dcccb344;
-            border-radius: 0px;
-            color: rgb(130, 8, 8);
-            font-size: 13px;
-        }
-
-        .positions {
-            margin-bottom: 2px;
-            margin-left: 20px;
-            background: none;
-            padding: 0px;
-            border-radius: 0px;
-            border-left: 0px;
-            box-shadow: none;
-            margin-bottom: 5px;
-            border: 0px !important;
+            position: sticky;
+            top: 0;
+            background: var(--bg-color);
+            z-index: 1000;
+            text-align: right;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
         }
 
         .navigaton-link {
-            padding: 10px;
-            font-weight: 900;
-            color: rgb(49, 35, 35)
+            margin-left: 20px;
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 15px;
         }
 
-        .navigaton-link:hover {
-            text-decoration: underline;
+        .navigaton-link:hover { color: var(--primary-red); }
+
+        .main-header {
+            color: var(--primary-red);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
         }
 
-        .li-container {
-            display: block;
-            background: white;
+        .portrait {
+            border-radius: 12px;
+            max-height: 260px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 20px 0;
         }
 
-        * {
-            box-sizing: border-box;
+        .highlight-company {
+            font-weight: 600;
+            color: var(--primary-red);
+            text-decoration: none;
         }
 
+        .highlight-company:hover { text-decoration: underline; }
+
+        /* Social/Academic Links */
         .flex-box {
             display: flex;
             flex-wrap: wrap;
-            text-align: left;
-            justify-content: left;
-            margin-top: 20px;
+            gap: 10px;
+            margin: 25px 0;
         }
 
-        .flex-container {
-            display: flex;
-            flex-wrap: wrap;
-            text-align: left;
+        .academic-link-box {
+            border: 1px solid #312323;
+            border-radius: 6px;
+            transition: all 0.2s ease;
         }
 
-        .flex-item-left {
-            padding: 10px;
-            flex: 60%;
-            font-size: 14.5px;
+        .academic-link-box a {
+            display: block;
+            padding: 8px 15px;
+            color: #312323;
+            text-decoration: none;
+            font-weight: 500;
         }
 
-        .flex-item-right {
-            padding: 10px;
-            flex: 30%;
+        .academic-link-box:hover {
+            transform: translateY(-2px);
+            background: var(--primary-red);
+            border-color: var(--primary-red);
         }
 
-        /* Responsive layout - makes a one column-layout instead of a two-column layout */
-        @media (max-width: 800px) {
+        .academic-link-box:hover a { color: white !important; }
 
-            .flex-item-right,
-            .flex-item-left {
-                flex: 100%;
-            }
+        /* Research List */
+        ul { list-style: none; padding: 0; }
+
+        .li-container {
+            background: var(--card-bg);
+            margin-bottom: 25px;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: box-shadow 0.3s ease;
         }
 
-        @media only screen and (max-width: 600px) {
-            .academic-link-box {
-                width: 80%;
-                margin: auto, auto, auto, auto;
-                text-align: center;
-            }
-
-            .box-interest {
-                width: 80%;
-                text-align: center;
-                margin: auto, auto, auto, auto;
-            }
-
-            .flex-item-right {
-                padding: 10px;
-                flex: 100%;
-                justify-content: center;
-                display: flex;
-            }
-
-            .flex-item-left {
-                padding: 10px;
-                flex: 60%;
-                text-align: center;
-                justify-content: center;
-            }
-
-            .flex-box {
-                display: flex;
-                flex-wrap: wrap;
-                text-align: left;
-                justify-content: center;
-                margin-top: 20px;
-                text-align: center;
-            }
-
-            .a-paper {
-                margin-top: 20px;
-            }
+        .li-container:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        #news ul {
-            padding-left: 20px;
+        .paper-title {
+            color: var(--primary-red);
+            font-size: 17px;
+            font-weight: 700;
+            text-decoration: none;
         }
+
+        .research-item-img {
+            width: 100%;
+            max-width: 220px;
+            border-radius: 4px;
+            display: block;
+            margin: auto;
+        }
+
+        .a-paper {
+            display: inline-block;
+            border: 1px solid var(--text-main);
+            padding: 4px 12px;
+            margin-top: 10px;
+            margin-right: 5px;
+            font-size: 13px;
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: 0.2s;
+        }
+
+        .a-paper:hover {
+            background: var(--text-main);
+            color: var(--card-bg);
+        }
+
+        .b-personal {
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        .flex-container { display: flex; flex-wrap: wrap; gap: 20px; }
+        .flex-item-left { flex: 2; min-width: 300px; }
+        .flex-item-right { flex: 1; min-width: 200px; }
 
         #news li {
-            background: none;
-            border: none;
-            border-radius: 0;
-            margin-bottom: 10px;
-            padding: 0;
-            list-style-type: disc;
+            margin-bottom: 12px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        #news li::before {
+            content: "•";
+            color: var(--primary-red);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .research-footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 600px) {
+            .box-top { text-align: center; }
+            .navigaton-link { margin: 0 10px; }
+            .flex-item-left, .flex-item-right { flex: 100%; text-align: center; }
         }
     </style>
-
-    <!-- ANALYTICS -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J2T6RX9953"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-J2T6RX9953');
-    </script>
-
-
-
 </head>
 
 <body>
-    <div class="full">
-        <div class="box-main ">
-            <div class="box-top">
-                <a class="navigaton-link" href="#about">About</a>
-                <a class="navigaton-link" href="#news">News</a>
-                <a class="navigaton-link" href="#research">Research</a>
-            </div>
-            <div class="box-right" id="about">
-                <img class="portrait" src="portrait.png" alt="Johannes von Oswald Portrait">
-            </div>
-            <div class="box-left">
-                <h2 class="main-header">Johannes von Oswald</h2>
-                <p>I am a research scientist at <a class="highlight-company" href="https://research.google/people/johannesvonoswald/">Google</a> in Zurich,
-                    working with <a class="highlight-company" href="https://en.wikipedia.org/wiki/Blaise_Ag%C3%BCera_y_Arcas">Blaise Agüera y Arcas</a>  and
-                    <a class="highlight-company" href="https://www.joaosacramento.com/">João Sacramento</a> in the
-                    <a class="highlight-company" href="https://github.com/paradigms-of-intelligence">Paradigms of Intelligence Team</a>.
-                    Until 2023, I was a PhD student supervised by <a class="highlight-company" href="https://de.wikipedia.org/wiki/Angelika_Steger">Angelika Steger</a> and
-                    João Sacramento at the Institute of Theoretical Computer Science, ETH Zurich.<br><br>
+    <div class="box-main">
+        <nav class="box-top">
+            <a class="navigaton-link" href="#about">About</a>
+            <a class="navigaton-link" href="#news">News</a>
+            <a class="navigaton-link" href="#research">Research</a>
+        </nav>
 
-                    My research focuses on how and what machines, in particular neural networks, learn from data. One important goal is to allow these learning algorithms to generalize broadly and solve novel complex tasks.
-                    Therefore, I am heavily inspired by (meta-) learning within a large, possibly open-ended, enviroment.<br><br>
-
-                    Currently, I investigate how state-of-the-art neural network models, in particular transformer-based large language models, can move beyond pattern matching to learn and implement algorithmic-like solutions.
-                    This led me to work on mesa-optimization: the emergence of <em>optimization</em> algorithms within neural networks!
-                    <a class="highlight-company" href="https://arxiv.org/abs/2309.05858">In recent work</a>, we showed that gradient descent-based algorithms
-                    can be implemented within the activations of transformers by simple autoregressive outer-optimization. This allows transformers to learn and
-                    generalize at test time to novel data provided in-context. This led to the development of a novel recurrent neural
-                    network architecture, the <a class="highlight-company" href="https://arxiv.org/abs/2506.05233">MesaNet</a>, which we tested on language modeling at scale.<br><br>
-
-                    Recently, I became more intrigued by hardware, and I started working with <a class="highlight-company" href="https://chfrenkel.github.io/">Charlotte Frenkel</a> on exciting ideas to run neural networks on the hardware substrates they deserve!
-                    
-                </p>
-                <h4 class="sub-header">I am always interested in scientific collaborations, particularly in helping students with their research.
-                    If you want to collaborate with me and think that your research fits my interest, please reach out to me via one of the social media channels below or via email at jvoswald[at]google.com.</h4>
-
-                <div class="flex-box">
-                    <br>
-                    <div class="academic-link-box"
-                        onclick="location.href='https://scholar.google.com/citations?user=jdnL-PgAAAAJ&hl=en'"  
-                        style="cursor:pointer">
-                        <a class="academic-link"
-                            href="https://scholar.google.com/citations?user=jdnL-PgAAAAJ&hl=en">Google Scholar <i
-                                class="ai ai-google-scholar-square "></i></a>
-                    </div>
-                    <div class="academic-link-box" onclick="location.href='https://x.com/oswaldjoh'"
-                        style="cursor:pointer">
-                        <a class="academic-link" href="https://x.com/oswaldjoh">Twitter <i
-                                class="fa fa-twitter"></i></a>
-                    </div>
-                    <div class="academic-link-box" onclick="location.href='https://github.com/jovoswald'"
-                        style="cursor:pointer">
-                        <a class="academic-link" href="https://github.com/jovoswald">Github <i
-                                class="fa fa-github"></i></a>
-                    </div>
-                    <div class="academic-link-box" onclick="location.href='https://www.linkedin.com/in/johswald/'"
-                    style="cursor:pointer">
-                    <a class="academic-link" href="https://www.linkedin.com/in/johswald/">Linkedin <i
-                            class="fa fa-linkedin"></i></a>
-                    </div>
-                    <div class="academic-link-box" onclick="location.href='CV_JohannesvonOswald.pdf'"
-                    style="cursor:pointer">
-                    <a class="academic-link" href="CV_JohannesvonOswald.pdf">CV <i
-                            class="fa fa-file"></i></a>
-                    </div>
-
+        <section id="about">
+            <div class="flex-container" style="align-items: center;">
+                <div class="flex-item-left">
+                    <h2 class="main-header">Johannes von Oswald</h2>
+                    <p>I am a research scientist at <a class="highlight-company" href="https://research.google/people/johannesvonoswald/">Google</a> in Zurich, 
+                        working with <a class="highlight-company" href="https://en.wikipedia.org/wiki/Blaise_Ag%C3%BCera_y_Arcas">Blaise Agüera y Arcas</a> and 
+                        <a class="highlight-company" href="https://www.joaosacramento.com/">João Sacramento</a> in the 
+                        <a class="highlight-company" href="https://github.com/paradigms-of-intelligence">Paradigms of Intelligence Team</a>. 
+                        Until 2023, I was a PhD student supervised by <a class="highlight-company" href="https://de.wikipedia.org/wiki/Angelika_Steger">Angelika Steger</a> and 
+                        João Sacramento at ETH Zurich.</p>
                 </div>
-                <div class="research" id="news">
-                    <h2 class="section-title">News</h2>
-                    <ul>
-                        <li>December, 2025 - <a class="highlight-company" href="https://scholar.google.com/citations?user=PIABIKoF5Y8C&hl=fr" target="_blank">Tristan Torchet </a> is joining Google PI as a student researcher and working with Charlotte and me on new exiting hardware ideas.</li>
-                        <li>October, 2025 - <a class="highlight-company" href="https://abdulhaim.github.io/" target="_blank">Marwa Abdulhai</a> is joining Google PI as a student researcher and working with Nino and me on dynamic evaluations.</li>
-                        <li>October, 2025 - Our work on gradient descent within Transformers was discussed by Andrej Karpathy on the Dwarkesh Patel Podcast <a class="highlight-company" href="https://youtu.be/lXUZvyajciY?si=jeoFgabWE-IkMh1N" target="_blank"> https://youtu.be/lXUZvyajciY?si=jeoFgabWE-IkMh1N</a>!</li>
-                        <li>July, 2025 - Nino and me are hosting a student researcher for the end of this year at Google - please apply <a class="highlight-company" href="https://docs.google.com/forms/d/e/1FAIpQLSd2c-yIKdDLw_NNzoXiwx29AZNhVLmgKieLXWEl3rkfHfK9jg/viewform" target="_blank">here</a> .</li>
-                        <li>June, 2025 - Nino and me presented the MesaNet at the <a class="highlight-company" href="https://youtu.be/Kvw_d3iL9vI?si=Ju68OYTXBKicKe5U" target="_blank">ASAP seminar</a>. Please see the slides <a class="highlight-company" href="https://asap-seminar.github.io/assets/slides/MesaNet%20_%20ASAP%20Seminar.pdf" target="_blank">here</a>.</li>
-                        <li>June, 2025 - João gave <a class="highlight-company" href="https://www.youtube.com/watch?v=R9yuajrZw_M" target="_blank">a talk at the Kempner Institute at Harvard University</a> about our work on mesa-optimization and the MesaNet.</li>
-                        <li>April, 2025 - Yassir gave an excellent oral presentation <a class="highlight-company" href="https://www.youtube.com/watch?v=rA7Evvz2lck" target="_blank">of our work at ICLR 2025</a> on how to learn randomized algorithms within transformers.</li>
-                        <li>March, 2024 - Our work on gradient descent within Transformers was discussed by Sholto Douglas & Trenton Bricken on the Dwarkesh Patel Podcast <a class="highlight-company" href="https://youtu.be/UTuuTTnjxMQ?si=6HV5ahGM3YXY1K50&t=264" target="_blank"> https://youtu.be/UTuuTTnjxMQ?si=6HV5ahGM3YXY1K50&t=264</a>!</li>
-                        <li>December, 2023 - I succesfully defended <a class="highlight-company" href="https://www.research-collection.ethz.ch/bitstream/handle/20.500.11850/660213/2/PhD_Thesis_Johannes_von_Oswald_manuscript.pdf" target="_blank">my PhD thesis</a>! I am particularly happy about the front and back cover :). </li>
-                        <li>December, 2023 - I gave a short <a class="highlight-company" href="https://youtu.be/TjwYtlzXgts?si=2vljIDCin8SN5Hp4" target="_blank">talk at Alignment Workshop in New Orleans</a> about our mechanistic interpretability work of in-context learning.</li>
-                    </ul>
-                </div>
-
-                <div class="research" id="research">
-                    <h2 class="section-title">Research Highlights</h2>
-                    <ul>
-                        <li class="li-container">
-                            <div class="flex-container">
-                                <div class="flex-item-left">
-                                    <b><a class="paper-title" href="https://arxiv.org/abs/2506.05233">MesaNet: Sequence Modeling by Locally Optimal Test-Time Training</a></b><br class="research-br">
-                                    <span class="b-personal">Johannes von Oswald*</span>, Nino Scherrer*, Seijin Kobayashi, Luca Versari, Songlin Yang, Maximilian Schlegel, Kaitlin Maile, Yanick Schimpf, Oliver Sieberling, Alexander Meulemans, Rif A. Saurous, Guillaume Lajoie, Charlotte Frenkel, Razvan Pascanu, Blaise Agüera y Arcas and João Sacramento <br class="research-br"><br>
-                                    <b>ArXiv 2025</b> <br class="research-br"><br>
-                                    <a class="a-paper" href="https://arxiv.org/abs/2506.05233">Paper</a>
-                                    <a class="a-paper" href="https://github.com/fla-org/flash-linear-attention/blob/main/fla/layers/mesa_net.py">Code</a>
-                                    <a class="a-paper" href="https://colab.research.google.com/drive/1uE_qVC6uYy9Z048_T8xNlwAY0nuIWucG#scrollTo=FkVNxKkzp2Ga">Colab Tutorial</a>
-                                </div>
-                                <div class="flex-item-right">
-                                    <img src="img/mesanet.png" class="research-item-img" alt="MesaNet: Sequence Modeling by Locally Optimal Test-Time Training">
-                                </div>
-                            </div>
-                        </li>
-                        <li class="li-container">
-                            <div class="flex-container">
-                                <div class="flex-item-left">
-                                    <b><a class="paper-title" href="https://arxiv.org/abs/2309.05858">Uncovering Mesa-Optimization Algorithms in Transformers</a></b><br class="research-br">
-                                    <span class="b-personal">Johannes von Oswald*</span>, Maximilian Schlegel*, Alexander Meulemans, Seijin Kobayashi, Eyvind Niklasson, Nicolas Zucchet, Nino Scherrer, Nolan Miller, Mark Sandler, Blaise Agüera y Arcas, Max Vladymyrov, Razvan Pascanu and João Sacramento <br class="research-br"><br>
-                                    <b>ICLR 2024, Workshop on Understanding of Foundation Models (Oral)</b> <br class="research-br"><br>
-                                    <a class="a-paper" href="https://arxiv.org/abs/2309.05858">Paper</a>
-                                    <a class="a-paper" href="https://github.com/mtavit/transformers_mesa_optimization_paper">Code</a>
-                                </div>
-                                <div class="flex-item-right">
-                                    <img src="img/uncovering_mesa_optimization_algorithms.png" class="research-item-img" alt="Uncovering Mesa-Optimization Algorithms in Transformers">
-                                </div>
-                            </div>
-                        </li>
-                        <li class="li-container">
-                            <div class="flex-container">
-                                <div class="flex-item-left">
-                                    <b><a class="paper-title" href="https://arxiv.org/abs/2408.10818">Learning Randomized Algorithms with Transformers</a></b><br class="research-br">
-                                    <span class="b-personal">Johannes von Oswald*</span>, Seijin Kobayashi*, Yassir Akram*, Angelika Steger <br class="research-br"><br>
-                                    <b>ICML 2025, Oral Presentation</b> <br class="research-br"><br>
-                                    <a class="a-paper" href="https://arxiv.org/abs/2408.10818">Paper</a>
-                                </div>
-                                <div class="flex-item-right">
-                                    <img src="img/learning_randomized_algorithms.png" class="research-item-img" alt="Learning Randomized Algorithms with Transformers">
-                                </div>
-                            </div>
-                        </li>
-                        <li class="li-container">
-                            <div class="flex-container">
-                                <div class="flex-item-left">
-                                    <b><a class="paper-title" href="https://arxiv.org/abs/2410.23819">Weight decay induces low-rank attention layers</a></b><br class="research-br">
-                                    Seijin Kobayashi, Yassir Akram, <span class="b-personal">Johannes von Oswald</span> <br class="research-br"><br>
-                                    <b>NeurIPS 2024</b> <br class="research-br"><br>
-                                    <a class="a-paper" href="https://arxiv.org/abs/2410.23819">Paper</a>
-                                </div>
-                                <div class="flex-item-right">
-                                    <img src="img/weight_decay.png" class="research-item-img" alt="Transformers learn in-context by gradient descent">
-                                </div>
-                            </div>
-                        </li>
-                        <li class="li-container">
-                            <div class="flex-container">
-                                <div class="flex-item-left">
-                                    <b><a class="paper-title" href="https://arxiv.org/abs/2212.07677">Transformers learn in-context by gradient descent</a></b><br class="research-br">
-                                    <span class="b-personal">Johannes von Oswald</span>, Eyvind Niklasson, Ettore Randazzo, João Sacramento, Alexander Mordvintsev, Andrey Zhmoginov, Max Vladymyrov <br class="research-br"><br>
-                                    <b>ICML 2023, Oral Presentation</b> <br class="research-br"><br>
-                                    <a class="a-paper" href="https://arxiv.org/abs/2212.07677">Paper</a>
-                                    <a class="a-paper" href="https://github.com/transformerGD/transformers-learn-in-context-by-gradient-descent">Code</a>
-                                </div>
-                                <div class="flex-item-right">
-                                    <img src="img/transformers_gd_cxt.png" class="research-item-img" alt="Transformers learn in-context by gradient descent">
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="research research-footer">
-                    <div class="research-footer-inner">
-                        <b>I shamelessly stole this website design from my friend <a class="highlight-company" href="https://ninodimontalcino.github.io/">Nino Scherrer.</a></b>
-                        <div class="research-br"></div>
-                        <b>Last Updated:</b> July, 2025<br><br>
-                    </div>
+                <div class="flex-item-right" style="text-align: right;">
+                    <img class="portrait" src="portrait.png" alt="Johannes von Oswald Portrait">
                 </div>
             </div>
-        </div>
+
+            <p>My research focuses on how neural networks learn from data. Currently, I investigate how Transformer-based LLMs move beyond pattern matching to implement algorithmic solutions. This led to my work on <strong>mesa-optimization</strong>: the emergence of optimization algorithms within neural networks.</p>
+            
+            <p>In <a class="highlight-company" href="https://arxiv.org/abs/2309.05858">recent work</a>, we showed that gradient descent-based algorithms can be implemented within the activations of transformers, leading to the development of <a class="highlight-company" href="https://arxiv.org/abs/2506.05233">MesaNet</a>.</p>
+
+            <h4 style="margin-top: 30px;">Reach out for scientific collaborations at <strong>jvoswald[at]google.com</strong>.</h4>
+
+            <div class="flex-box">
+                <div class="academic-link-box"><a href="https://scholar.google.com/citations?user=jdnL-PgAAAAJ&hl=en">Scholar <i class="ai ai-google-scholar"></i></a></div>
+                <div class="academic-link-box"><a href="https://x.com/oswaldjoh">Twitter <i class="fa fa-twitter"></i></a></div>
+                <div class="academic-link-box"><a href="https://github.com/jovoswald">Github <i class="fa fa-github"></i></a></div>
+                <div class="academic-link-box"><a href="https://www.linkedin.com/in/johswald/">LinkedIn <i class="fa fa-linkedin"></i></a></div>
+                <div class="academic-link-box"><a href="CV_JohannesvonOswald.pdf">CV <i class="fa fa-file-text-o"></i></a></div>
+            </div>
+        </section>
+
+        <section id="news" style="margin-top: 50px;">
+            <h2 class="main-header" style="font-size: 1.5rem;">News</h2>
+            <ul>
+                <li>May, 2026 - Gave a talk about mesa optimization at <a class="highlight-company" href="https://tufalabs.ai/">Tufa labs</a>, Zurich.</li>
+                <li>October, 2025 - Andrej Karpathy discussed our work on the <a class="highlight-company" href="https://youtu.be/lXUZvyajciY">Dwarkesh Patel Podcast</a>.</li>
+                <li>June, 2025 - Presented MesaNet at the <a class="highlight-company" href="https://asap-seminar.github.io/">ASAP seminar</a>.</li>
+                <li>December, 2023 - Successfully defended my <a class="highlight-company" href="https://www.research-collection.ethz.ch/bitstream/handle/20.500.11850/660213/2/PhD_Thesis_Johannes_von_Oswald_manuscript.pdf">PhD thesis</a>!</li>
+            </ul>
+        </section>
+
+        <section id="research" style="margin-top: 50px;">
+            <h2 class="main-header" style="font-size: 1.5rem;">Research Highlights</h2>
+            <ul>
+                <li class="li-container">
+                    <div class="flex-container">
+                        <div class="flex-item-left">
+                            <a class="paper-title" href="https://arxiv.org/abs/2506.05233">MesaNet: Sequence Modeling by Locally Optimal Test-Time Training</a><br>
+                            <span class="b-personal">Johannes von Oswald*</span>, Nino Scherrer*, et al. <br>
+                            <strong>ArXiv 2025</strong><br>
+                            <a class="a-paper" href="https://arxiv.org/abs/2506.05233">Paper</a>
+                            <a class="a-paper" href="https://github.com/fla-org/flash-linear-attention">Code</a>
+                        </div>
+                        <div class="flex-item-right">
+                            <img src="img/mesanet.png" class="research-item-img" alt="MesaNet">
+                        </div>
+                    </div>
+                </li>
+                <li class="li-container">
+                    <div class="flex-container">
+                        <div class="flex-item-left">
+                            <a class="paper-title" href="https://arxiv.org/abs/2212.07677">Transformers learn in-context by gradient descent</a><br>
+                            <span class="b-personal">Johannes von Oswald</span>, Eyvind Niklasson, et al.<br>
+                            <strong>ICML 2023, Oral Presentation</strong><br>
+                            <a class="a-paper" href="https://arxiv.org/abs/2212.07677">Paper</a>
+                        </div>
+                        <div class="flex-item-right">
+                            <img src="img/transformers_gd_cxt.png" class="research-item-img" alt="Transformers GD">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <footer class="research-footer">
+            <b>Design inspired by <a class="highlight-company" href="https://ninodimontalcino.github.io/">Nino Scherrer</a>.</b><br>
+            Last Updated: May, 2026
+        </footer>
     </div>
 </body>
 </html>
